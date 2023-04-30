@@ -2,7 +2,7 @@
 import pandas as pd
 import plotly.express as px
 from dash import Dash, html, dash_table, dcc, callback, Output, Input
-#hello
+
 # Load the geojson file
 from urllib.request import urlopen
 import json
