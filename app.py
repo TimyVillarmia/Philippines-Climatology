@@ -4,7 +4,7 @@ import dash_bootstrap_components as dbc
 from dash import html, dcc, Output, Input, dash
 
 # import components
-from components import navbar, staticMap, lineGraph
+from components import navbar, staticMap, lineGraph, LineBar
 
 # Load the geojson file
 from urllib.request import urlopen
@@ -54,11 +54,7 @@ app.layout = html.Div([
             [
                 dbc.Col(dcc.Graph(figure={}, config={'displayModeBar': False},
                                   id='static_choropleth'), lg=6),
-                dbc.Col(dcc.Graph(figure=lineGraph.line_graph(df_sheet_all['monthly_ph'],
-                                                              'category',
-                                                              ['mean', 'min', 'max'],
-                                                              'Month',
-                                                              'TEMPERATURE (°C)'),
+                dbc.Col(dcc.Graph(figure=LineBar.LineBar_graph(),
                                   config={'displayModeBar': False},
                                   id='line_chart'), lg=6),
             ]
@@ -72,6 +68,7 @@ app.layout = html.Div([
                                   id='line_graph'), width=12)
             ]
         )
+
     ])
 ])
 

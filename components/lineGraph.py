@@ -8,7 +8,8 @@ def line_graph(dataframe, x_axis, y_axis, x_title, y_title):
 
     fig.update_layout(xaxis_title=x_title,
                       yaxis_title=y_title,
-                      height=450
+                      height=450,
+                      yaxis_ticksuffix=" °C"
                       )
 
     return fig
